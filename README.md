@@ -10,8 +10,7 @@ Welcome to the Self-Learning Plugin for Unreal Engine 5.3! This plugin enables t
 3. [Installation](https://github.com/Pogbino395/Self-Learning-Plugin-UE5?tab=readme-ov-file#installation)
 4. [Usage](https://github.com/Pogbino395/Self-Learning-Plugin-UE5?tab=readme-ov-file#usage)
 5. [Documentation](https://github.com/Pogbino395/Self-Learning-Plugin-UE5?tab=readme-ov-file#documentation)
-6. [Contributing](https://github.com/Pogbino395/Self-Learning-Plugin-UE5?tab=readme-ov-file#contributing)
-7. [License](https://github.com/Pogbino395/Self-Learning-Plugin-UE5?tab=readme-ov-file#license)
+6. [License](https://github.com/Pogbino395/Self-Learning-Plugin-UE5?tab=readme-ov-file#license)
  
 ### Introduction
 The Self-Learning Plugin leverages machine learning algorithms to allow AI agents to learn from their environment and improve their task performance over time. This plugin is designed to be user-friendly and easily integrable with existing Unreal Engine projects.
@@ -35,9 +34,6 @@ Once the plugin is installed and enabled, you can start integrating self-learnin
 * Neural Network Theory [TODO]
 * Plugin Configuration [TODO]
 * Real Example [TODO]
-
-### Contributing
-We welcome contributions from the community! If you have any ideas, suggestions, or bug reports, please open an issue or submit a pull request. For major changes, please discuss with the repository owners first.
 
 ### License
 This project is licensed under the MIT License. See the [LICENSE](https://github.com/Pogbino395/Self-Learning-Plugin-UE5/blob/main/LICENSE) file for details.
