@@ -1,15 +1,16 @@
 # **Neural Network Theory**
 The Self-Learning Plugin for Unreal Engine 5.3 utilizes a neural network to enable AI agents to learn and improve their task performance. This page explains the theory behind the neural network implementation used in this plugin.
 
-Table of Contents
-Introduction
-Weight Initialization
-Forward Propagation
-Activation Functions
-Backward Propagation
-Weight Adjustment
-Optimization Strategy
-Introduction
+## **Table of Contents**
+1. [Introduction](#introduction)
+2. [Weight Initialization](#weightinitialization)
+3. [Forward Propagation](#forwardpropagation)
+4. [Activation Functions](#activationfunctions)
+5. [Backward Propagation](#backwardpropagation)
+6. [Weight Adjustment](#weightadjustment)
+7. [Optimization Strategy](#optimizationstrategy)
+   
+## **Introduction**
 Neural networks are a key component of modern machine learning, allowing systems to learn from data and make decisions based on that learning. In the Self-Learning Plugin, a neural network is employed to enable AI agents to perform and improve in various tasks within Unreal Engine 5.3 environments.
 
 Weight Initialization
