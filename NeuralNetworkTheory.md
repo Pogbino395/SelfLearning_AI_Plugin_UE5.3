@@ -16,19 +16,20 @@ Neural networks are a key component of modern machine learning, allowing systems
 ## **Weight Initialization**
 Proper initialization of weights is crucial for the effective training of neural networks. In the Self-Learning Plugin, weights are initialized to small random values within a specified range.
 
-# **Recommended Initialization Range**
+### **Recommended Initialization Range**
 + Weights are typically initialized in the range of **-1** to **1**.
 
 Initializing weights in this range ensures that the network starts with small values, which helps in preventing issues related to exploding or vanishing gradients.
 
-Forward Propagation
+## **Forward Propagation**
 Forward propagation is the process by which input data is passed through the neural network to produce an output. This involves a series of steps where each neuron's output is calculated as a weighted sum of its inputs, passed through an activation function.
 
-Steps in Forward Propagation
-Input Layer: The neural network receives input data (e.g., sensor data, game state). These input values often need to be scaled to ensure they are within a range suitable for the neural network (e.g., 0 to 1).
-Hidden Layers: The input data is processed through one or more hidden layers. Each neuron in a hidden layer calculates a weighted sum of its inputs, applies an activation function, and passes the result to the next layer. Hidden layers are useful for capturing complex patterns and interactions in the data, although they are not strictly necessary for all tasks.
-Output Layer: The final layer produces the output, which can be a decision or action taken by the AI agent.
-Example
+### **Steps in Forward Propagation**
+1. Input Layer: The neural network receives input data (e.g., sensor data, game state). These input values often need to be scaled to ensure they are within a range suitable for the neural network (e.g., 0 to 1).
+2. Hidden Layers: The input data is processed through one or more hidden layers. Each neuron in a hidden layer calculates a weighted sum of its inputs, applies an activation function, and passes the result to the next layer. Hidden layers are useful for capturing complex patterns and interactions in the data, although they are not strictly necessary for all tasks.
+3. Output Layer: The final layer produces the output, which can be a decision or action taken by the AI agent.
+
+### **Example**
 For a simple neural network with one hidden layer:
 
 Inputs: 
