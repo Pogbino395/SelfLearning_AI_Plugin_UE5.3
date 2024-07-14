@@ -3,12 +3,12 @@ The Self-Learning Plugin for Unreal Engine 5.3 utilizes a neural network to enab
 
 ## **Table of Contents**
 1. [Introduction](#introduction)
-2. [Weight Initialization](#weightinitialization)
-3. [Forward Propagation](#forwardpropagation)
-4. [Activation Functions](#activationfunctions)
-5. [Backward Propagation](#backwardpropagation)
-6. [Weight Adjustment](#weightadjustment)
-7. [Optimization Strategy](#optimizationstrategy)
+2. [Weight Initialization](#weight-initialization)
+3. [Forward Propagation](#forward-propagation)
+4. [Activation Functions](#activation-functions)
+5. [Backward Propagation](#backward-propagation)
+6. [Weight Adjustment](#weight-adjustment)
+7. [Optimization Strategy](#optimization-strategy)
    
 ## **Introduction**
 Neural networks are a key component of modern machine learning, allowing systems to learn from data and make decisions based on that learning. In the Self-Learning Plugin, a neural network is employed to enable AI agents to perform and improve in various tasks within Unreal Engine 5.3 environments.
@@ -25,207 +25,40 @@ Initializing weights in this range ensures that the network starts with small va
 Forward propagation is the process by which input data is passed through the neural network to produce an output. This involves a series of steps where each neuron's output is calculated as a weighted sum of its inputs, passed through an activation function.
 
 ### **Steps in Forward Propagation**
-1. Input Layer: The neural network receives input data (e.g., sensor data, game state). These input values often need to be scaled to ensure they are within a range suitable for the neural network (e.g., 0 to 1).
-2. Hidden Layers: The input data is processed through one or more hidden layers. Each neuron in a hidden layer calculates a weighted sum of its inputs, applies an activation function, and passes the result to the next layer. Hidden layers are useful for capturing complex patterns and interactions in the data, although they are not strictly necessary for all tasks.
-3. Output Layer: The final layer produces the output, which can be a decision or action taken by the AI agent.
+1. **Input Layer:** The neural network receives input data (e.g., sensor data, game state). These input values often need to be scaled to ensure they are within a range suitable for the neural network (e.g., 0 to 1).
+2. **Hidden Layers:** The input data is processed through one or more hidden layers. Each neuron in a hidden layer calculates a weighted sum of its inputs, applies an activation function, and passes the result to the next layer. Hidden layers are useful for capturing complex patterns and interactions in the data, although they are not strictly necessary for all tasks.
+3. **Output Layer:** The final layer produces the output, which can be a decision or action taken by the AI agent.
 
 ### **Example**
 For a simple neural network with one hidden layer:
 
-Inputs: 
-𝑥
-1
-,
-𝑥
-2
-x 
-1
-​
- ,x 
-2
-​
- 
-Weights for the hidden layer: 
-𝑤
-1
-,
-1
-,
-𝑤
-1
-,
-2
-,
-𝑤
-2
-,
-1
-,
-𝑤
-2
-,
-2
-w 
-1,1
-​
- ,w 
-1,2
-​
- ,w 
-2,1
-​
- ,w 
-2,2
-​
- 
-Hidden layer outputs:
-ℎ
-1
-=
-activation
-(
-𝑥
-1
-⋅
-𝑤
-1
-,
-1
-+
-𝑥
-2
-⋅
-𝑤
-1
-,
-2
-)
-h 
-1
-​
- =activation(x 
-1
-​
- ⋅w 
-1,1
-​
- +x 
-2
-​
- ⋅w 
-1,2
-​
- )
+1. **Inputs:** $x_1, x_2$
 
-ℎ
-2
-=
-activation
-(
-𝑥
-1
-⋅
-𝑤
-2
-,
-1
-+
-𝑥
-2
-⋅
-𝑤
-2
-,
-2
-)
-h 
-2
-​
- =activation(x 
-1
-​
- ⋅w 
-2,1
-​
- +x 
-2
-​
- ⋅w 
-2,2
-​
- )
-Weights for the output layer: 
-𝑤
-3
-,
-1
-,
-𝑤
-3
-,
-2
-w 
-3,1
-​
- ,w 
-3,2
-​
+2. **Weights for the hidden layer:** $w_{1,1}, w_{1,2}, w_{2,1}, w_{2,2}$
  
-Output:
-𝑦
-=
-activation
-(
-ℎ
-1
-⋅
-𝑤
-3
-,
-1
-+
-ℎ
-2
-⋅
-𝑤
-3
-,
-2
-)
-y=activation(h 
-1
-​
- ⋅w 
-3,1
-​
- +h 
-2
-​
- ⋅w 
-3,2
-​
- )
-Activation Functions
+3. **Hidden layers:**
+
+$$h_1 = \text{ActivationFunction}(x_1 \cdot w_{1,1} + x_2 \cdot w_{1,2})$$
+
+$$h_2 = \text{ActivationFunction}(x_1 \cdot w_{2,1} + x_2 \cdot w_{2,2})$$
+
+
+4. **Weights for the output layer:** $w_{3,1}, w_{3,2}$
+
+5. **Output:**
+
+$$y = \text{ActivationFunction}(h_1 \cdot w_{3,1} + h_2 \cdot w_{3,2})$$
+   
+## **Activation Functions**
 Activation functions are crucial in a neural network as they introduce non-linearity, enabling the network to model complex patterns. The Self-Learning Plugin supports several activation functions:
 
-ReLU (Rectified Linear Unit):
+1. **ReLU (Rectified Linear Unit):**
 
-ReLU
-(
-𝑥
-)
-=
-max
-⁡
-(
-0
-,
-𝑥
-)
-ReLU(x)=max(0,x)
-ReLU is widely used for its simplicity and effectiveness in deep networks and is particularly useful in hidden layers.
+$$ReLU(x)=max(0,x)$$
 
-Sigmoid:
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ReLU is widely used for its simplicity and effectiveness in deep networks and is particularly useful in hidden layers.
+
+2. **Sigmoid:**
 
 𝜎
 (
