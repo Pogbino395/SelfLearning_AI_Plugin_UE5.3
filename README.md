@@ -3,12 +3,12 @@
 Welcome to the Self-Learning Plugin for Unreal Engine 5.3! This plugin enables the creation and integration of self-learning AI capable of performing simple tasks within your Unreal Engine 5.3 projects. Whether you're a game developer or a researcher, this tool can help bring AI behaviors into your virtual worlds.
 
 ### **Table of Contents**
-1. [Introduction](https://github.com/Pogbino395/Self-Learning-Plugin-UE5?tab=readme-ov-file#introduction)
-2. [Features](https://github.com/Pogbino395/Self-Learning-Plugin-UE5?tab=readme-ov-file#features)
-3. [Installation](https://github.com/Pogbino395/Self-Learning-Plugin-UE5?tab=readme-ov-file#installation)
-4. [Usage](https://github.com/Pogbino395/Self-Learning-Plugin-UE5?tab=readme-ov-file#usage)
-5. [Documentation](https://github.com/Pogbino395/Self-Learning-Plugin-UE5?tab=readme-ov-file#documentation)
-6. [License](https://github.com/Pogbino395/Self-Learning-Plugin-UE5?tab=readme-ov-file#license)
+1. [Introduction](#introduction)
+2. [Features](#features)
+3. [Installation](#installation)
+4. [Usage](#usage)
+5. [Documentation](#documentation)
+6. [License](#license)
  
 ### **Introduction**
 The Self-Learning Plugin leverages machine learning algorithms to allow AI agents to learn from their environment and improve their task performance over time. This plugin is designed to be user-friendly and easily integrable with existing Unreal Engine projects.
