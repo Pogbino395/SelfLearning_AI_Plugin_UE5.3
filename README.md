@@ -31,7 +31,7 @@ Once the plugin is installed and enabled, you can start integrating self-learnin
 ### **Documentation**
 * Neural Network Theory [TODO]
 * Plugin Configuration [TODO]
-* Real Example [TODO]
+* Self Learning Car [TODO]
 
 ### **License**
 This project is licensed under the MIT License. See the [LICENSE](https://github.com/Pogbino395/Self-Learning-Plugin-UE5/blob/main/LICENSE) file for details.
