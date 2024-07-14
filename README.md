@@ -29,7 +29,7 @@ The Self-Learning Plugin leverages machine learning algorithms to allow AI agent
 Once the plugin is installed and enabled, you can start integrating self-learning AI into your project. Refer to the documentation pages below for detailed instructions on setup and configuration.
 
 ### **Documentation**
-* Neural Network Theory [TODO]
+* [Neural Network Theory](#neuralnetworktheory)
 * Plugin Configuration [TODO]
 * Self Learning Car [TODO]
 
