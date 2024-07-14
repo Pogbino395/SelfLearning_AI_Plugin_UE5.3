@@ -13,16 +13,12 @@ The Self-Learning Plugin for Unreal Engine 5.3 utilizes a neural network to enab
 ## **Introduction**
 Neural networks are a key component of modern machine learning, allowing systems to learn from data and make decisions based on that learning. In the Self-Learning Plugin, a neural network is employed to enable AI agents to perform and improve in various tasks within Unreal Engine 5.3 environments.
 
-Weight Initialization
+## **Weight Initialization**
 Proper initialization of weights is crucial for the effective training of neural networks. In the Self-Learning Plugin, weights are initialized to small random values within a specified range.
 
-Recommended Initialization Range
-Weights are typically initialized in the range of 
-−
-1
-−1 to 
-1
-1.
+# **Recommended Initialization Range**
++ Weights are typically initialized in the range of **-1** to **1**.
+
 Initializing weights in this range ensures that the network starts with small values, which helps in preventing issues related to exploding or vanishing gradients.
 
 Forward Propagation
