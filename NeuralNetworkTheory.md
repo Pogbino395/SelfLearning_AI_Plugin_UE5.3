@@ -77,7 +77,7 @@ $$StepUnit(x) =\begin{cases} 1, \text{if } x ≥ 0 \cr 0, \text{if } x < 0 \cr \
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The step function is a simple threshold-based activation function.
 
 ## **Backward Propagation**
-In typical neural networks, backward propagation (backpropagation) is used to adjust the weights based on the error of the output. However, in this plugin, we employ a simplified and unique approach to weight adjustment.
+In typical neural networks, backward propagation (backpropagation) is used to adjust the weights based on the error of the output. However, in this plugin, we employ a simplified approach to weight adjustment.
 
 ### **Simplified Backward Propagation**
 1. **Select One of the Best Networks:** After each training session, one network from the top $n$ best-performing networks is selected.
@@ -88,7 +88,7 @@ This approach simplifies the traditional backpropagation process, making it easi
 ## **Weight Adjustment**
 The weight adjustment process in our plugin is designed to be simple yet effective:
 
-1. **Select One of the Best Networks:** Identify one network from the top $n$ best-performing networks during the training session.
+1. **Select One of the Best Networks:** Select randomly one network from the top $n$ best-performing networks during the training session.
 2. **Random Modifications:** Apply random changes to the weights of this network. This involves slightly increasing or decreasing the weight values to explore new network behaviors.
 3. **Learning Rate:** Adjust the magnitude of weight changes based on a learning rate parameter, which controls how drastically the weights are modified.
    
