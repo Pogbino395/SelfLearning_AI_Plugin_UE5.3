@@ -53,216 +53,71 @@ $$y = \text{ActivationFunction}(h_1 \cdot w_{3,1} + h_2 \cdot w_{3,2})$$
 Activation functions are crucial in a neural network as they introduce non-linearity, enabling the network to model complex patterns. The Self-Learning Plugin supports several activation functions:
 
 1. **ReLU (Rectified Linear Unit):**
-
+   
 $$ReLU(x)=max(0,x)$$
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ReLU is widely used for its simplicity and effectiveness in deep networks and is particularly useful in hidden layers.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ReLU is widely used for its simplicity and effectiveness in deep networks and is particularly useful in hidden layers.
 
 2. **Sigmoid:**
+   
+$$σ(x) = \frac{1}{1 + e^{-x}}$$
 
-𝜎
-(
-𝑥
-)
-=
-1
-1
-+
-𝑒
-−
-𝑥
-σ(x)= 
-1+e 
-−x
- 
-1
-​
- 
-The sigmoid function maps input values to the range (0, 1), making it useful for probability-based outputs.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The sigmoid function maps input values to the range (0, 1), making it useful for probability-based outputs.
 
-Hyperbolic Tangent (Tanh):
+3. **Hyperbolic Tangent (Tanh):**
+   
+$$Tanh(x) = \frac{1}{1 + e^{-2x}} - 1$$
 
-tanh
-⁡
-(
-𝑥
-)
-=
-2
-1
-+
-𝑒
-−
-2
-𝑥
-−
-1
-tanh(x)= 
-1+e 
-−2x
- 
-2
-​
- −1
-Tanh maps input values to the range (-1, 1), offering a zero-centered output.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Tanh maps input values to the range (-1, 1), offering a zero-centered output.
 
-Step Function (StepUnit):
+4. **Step Function (StepUnit):**
 
-StepUnit
-(
-𝑥
-)
-=
-{
-1
-if 
-𝑥
-≥
-0
-0
-if 
-𝑥
-<
-0
-StepUnit(x)={ 
-1
-0
-​
-  
-if x≥0
-if x<0
-​
- 
-The step function is a simple threshold-based activation function.
+$$StepUnit(x) =\begin{cases} 1, \text{if } x ≥ 0 \cr 0, \text{if } x < 0 \cr \end{cases}$$
 
-Backward Propagation
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The step function is a simple threshold-based activation function.
+
+## **Backward Propagation**
 In typical neural networks, backward propagation (backpropagation) is used to adjust the weights based on the error of the output. However, in this plugin, we employ a simplified and unique approach to weight adjustment.
 
-Simplified Backward Propagation
-Select One of the Best Networks: After each training session, one network from the top 
-𝑛
-n best-performing networks is selected.
-Random Weight Changes: Random changes are made to the weights of this selected network to explore new potential configurations.
+### **Simplified Backward Propagation**
+1. **Select One of the Best Networks:** After each training session, one network from the top $n$ best-performing networks is selected.
+2. **Random Weight Changes:** Random changes are made to the weights of this selected network to explore new potential configurations.
+   
 This approach simplifies the traditional backpropagation process, making it easier to implement and potentially avoiding some local minima.
 
-Weight Adjustment
+## **Weight Adjustment**
 The weight adjustment process in our plugin is designed to be simple yet effective:
 
-Select One of the Best Networks: Identify one network from the top 
-𝑛
-n best-performing networks during the training session.
-Random Modifications: Apply random changes to the weights of this network. This involves slightly increasing or decreasing the weight values to explore new network behaviors.
-Learning Rate: Adjust the magnitude of weight changes based on a learning rate parameter, which controls how drastically the weights are modified.
-Example
-Original weights: 
-𝑤
-1
-,
-1
-,
-𝑤
-1
-,
-2
-,
-𝑤
-2
-,
-1
-,
-𝑤
-2
-,
-2
-,
-𝑤
-3
-,
-1
-,
-𝑤
-3
-,
-2
-w 
-1,1
-​
- ,w 
-1,2
-​
- ,w 
-2,1
-​
- ,w 
-2,2
-​
- ,w 
-3,1
-​
- ,w 
-3,2
-​
- 
-Random changes:
-𝑤
-1
-,
-1
-→
-𝑤
-1
-,
-1
-+
-Δ
-𝑤
-1
-,
-1
-w 
-1,1
-​
- →w 
-1,1
-​
- +Δw 
-1,1
-​
- 
+1. **Select One of the Best Networks:** Identify one network from the top $n$ best-performing networks during the training session.
+2. **Random Modifications:** Apply random changes to the weights of this network. This involves slightly increasing or decreasing the weight values to explore new network behaviors.
+3. **Learning Rate:** Adjust the magnitude of weight changes based on a learning rate parameter, which controls how drastically the weights are modified.
+   
+### **Example**
 
-𝑤
-2
-,
-2
-→
-𝑤
-2
-,
-2
-+
-Δ
-𝑤
-2
-,
-2
-w 
-2,2
-​
- →w 
-2,2
-​
- +Δw 
-2,2
-​
- 
+1. **Original weights:** $w_{1,1}, w_{1,2}, w_{2,1}, w_{2,2}, w_{3,1}, w_{3,2}$
 
-(where 
-Δ
-𝑤
-Δw are small random values scaled by the learning rate)
-Optimization Strategy
+2. **Learning Rate:** $\alpha$
+
+3. **Random Value:** $\delta_{1,1}, \delta_{1,2}, \delta_{2,1}, \delta_{2,2}, \delta_{3,1}, \delta_{3,2}$
+
+4. **Update Weights:**
+
+$$w_{1,1} = w_{1,1} + \alpha \cdot \delta_{1,1}$$
+
+$$w_{1,2} = w_{1,2} + \alpha \cdot \delta_{1,2}$$
+
+$$w_{2,1} = w_{2,1} + \alpha \cdot \delta_{2,1}$$
+
+$$w_{2,2} = w_{2,2} + \alpha \cdot \delta_{2,2}$$
+
+$$w_{3,1} = w_{3,1} + \alpha \cdot \delta_{3,1}$$
+
+$$w_{3,2} = w_{3,2} + \alpha \cdot \delta_{3,2}$$
+
+## **Optimization Strategy**
 The optimization strategy employed by the Self-Learning Plugin focuses on:
 
-Exploration: Random weight changes encourage the exploration of different network configurations, potentially discovering more effective AI behaviors.
-Exploitation: By selecting from the best-performing networks as the basis for modifications, the plugin ensures that learned knowledge is retained and built upon.
+1. **Exploration:** Random weight changes encourage the exploration of different network configurations, potentially discovering more effective AI behaviors.
+2. **Exploitation:** By selecting from the best-performing networks as the basis for modifications, the plugin ensures that learned knowledge is retained and built upon.
+   
 This combination of exploration and exploitation helps the AI agents gradually improve their performance over time without the complexity of traditional backpropagation.
