@@ -1,14 +1,17 @@
 # **Neural Network Theory**
 The Self-Learning Plugin for Unreal Engine 5.3 utilizes a neural network to enable AI agents to learn and improve their task performance. This page explains the theory behind the neural network implementation used in this plugin.
 
+![AI-Scheme drawio](https://github.com/user-attachments/assets/03850b51-36a7-4ee4-8c11-74faa3f21b85)
+
 ## **Table of Contents**
 1. [Introduction](#introduction)
 2. [Weight Initialization](#weight-initialization)
 3. [Forward Propagation](#forward-propagation)
 4. [Activation Functions](#activation-functions)
-5. [Backward Propagation](#backward-propagation)
-6. [Weight Adjustment](#weight-adjustment)
-7. [Optimization Strategy](#optimization-strategy)
+5. [Rewards and Selection of the Best Neural Network](#rewards-and-selection-of-the-best-neural-network)
+6. [Backward Propagation](#backward-propagation)
+7. [Weight Adjustment](#weight-adjustment)
+8. [Optimization Strategy](#optimization-strategy)
    
 ## **Introduction**
 Neural networks are a key component of modern machine learning, allowing systems to learn from data and make decisions based on that learning. In the Self-Learning Plugin, a neural network is employed to enable AI agents to perform and improve in various tasks within Unreal Engine 5.3 environments.
@@ -42,7 +45,6 @@ $$h_1 = \text{ActivationFunction}(x_1 \cdot w_{1,1} + x_2 \cdot w_{1,2})$$
 
 $$h_2 = \text{ActivationFunction}(x_1 \cdot w_{2,1} + x_2 \cdot w_{2,2})$$
 
-
 4. **Weights for the output layer:** $w_{3,1}, w_{3,2}$
 
 5. **Output:**
@@ -75,6 +77,26 @@ $$Tanh(x) = \frac{1}{1 + e^{-2x}} - 1$$
 $$StepUnit(x) =\begin{cases} 1, \text{if } x ≥ 0 \cr 0, \text{if } x < 0 \cr \end{cases}$$
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The step function is a simple threshold-based activation function.
+
+## **Rewards and Selection of the Best Neural Network**
+In the context of training AI agents, rewards play a crucial role in evaluating and selecting the best-performing neural networks. The reward system is designed to quantify the success or performance of an AI agent in completing tasks or achieving specific goals within the environment.
+
+### **1. Reward System:**
+
++ Each AI agent receives a reward based on its performance. This could be related to achieving objectives, minimizing errors, or optimizing certain metrics within the game environment.
++ The rewards are accumulated over time or specific episodes, providing a comprehensive measure of the agent's effectiveness.
+
+### **2. Selection Criteria:**
+
++ After a training session, the neural networks are evaluated based on the total rewards they have accumulated.
++ The top $n$ neural networks with the highest rewards are considered the best-performing ones.
+  
+### **3. Purpose of Rewards:**
+
++ The reward system ensures that the neural networks are driven towards desired behaviors and outcomes.
++ It helps in identifying which network configurations are most successful, guiding the learning process towards more optimal solutions.
+
+By utilizing a reward-based selection process, the training methodology focuses on continuously improving the AI agents' performance, leading to the selection of highly effective neural networks. This approach ensures that the adjustments and learning are aligned with the ultimate goals and objectives defined within the Unreal Engine environment.
 
 ## **Backward Propagation**
 In typical neural networks, backward propagation (backpropagation) is used to adjust the weights based on the error of the output. However, in this plugin, we employ a simplified approach to weight adjustment.
