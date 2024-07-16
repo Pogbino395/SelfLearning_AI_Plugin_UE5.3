@@ -1,1 +1,1 @@
-
+# **Plugin Configuration**
