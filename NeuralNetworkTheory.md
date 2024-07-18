@@ -5,16 +5,42 @@ The Self-Learning Plugin for Unreal Engine 5.3 utilizes a neural network to enab
 
 ## **Table of Contents**
 1. [Introduction](#introduction)
-2. [Weight Initialization](#weight-initialization)
-3. [Forward Propagation](#forward-propagation)
-4. [Activation Functions](#activation-functions)
-5. [Rewards and Selection of the Best Neural Network](#rewards-and-selection-of-the-best-neural-network)
-6. [Backward Propagation](#backward-propagation)
-7. [Weight Adjustment](#weight-adjustment)
-8. [Optimization Strategy](#optimization-strategy)
+2. [AI Agent](#ai-agent)
+3. [Weight Initialization](#weight-initialization)
+4. [Forward Propagation](#forward-propagation)
+5. [Activation Functions](#activation-functions)
+6. [Rewards and Selection of the Best Neural Network](#rewards-and-selection-of-the-best-neural-network)
+7. [Backward Propagation](#backward-propagation)
+8. [Weight Adjustment](#weight-adjustment)
+9. [Optimization Strategy](#optimization-strategy)
    
 ## **Introduction**
 Neural networks are a key component of modern machine learning, allowing systems to learn from data and make decisions based on that learning. In the Self-Learning Plugin, a neural network is employed to enable AI agents to perform and improve in various tasks within Unreal Engine 5.3 environments.
+
+## **AI Agent**
+An AI agent in the Self-Learning Plugin acts as the entity that interacts with the environment, making decisions based on the neural network's output. The agent's behavior and performance are critical for achieving desired tasks and improving over time through learning.
+
+### **1. Interaction with Environment:**
+
++ The AI agent receives inputs from the environment, which could include game state information, sensor data, or other relevant variables.
++ These inputs are fed into the neural network, which processes them and generates corresponding outputs or actions.
+
+### **2. Decision Making:**
+
++ The outputs of the neural network determine the actions taken by the AI agent.
++ These actions can range from simple movements and choices to complex strategies and behaviors depending on the task.
+
+### **3. Learning and Adaptation:**
+
++ The agent's performance is evaluated based on a reward system, which provides feedback on the effectiveness of its actions.
++ Over time, through repeated interactions and weight adjustments, the AI agent learns to optimize its actions to achieve better performance and higher rewards.
+
+### **4. Continuous Improvement:**
+
++ By selecting and adjusting the weights of the top-performing neural networks, the AI agent continually evolves.
++ This process ensures that the agent adapts to changing environments and improves its ability to complete tasks efficiently.
+
+The AI agent, powered by the neural network, is the cornerstone of the Self-Learning Plugin, enabling dynamic and intelligent behavior within Unreal Engine 5.3 environments.
 
 ## **Weight Initialization**
 Proper initialization of weights is crucial for the effective training of neural networks. In the Self-Learning Plugin, weights are initialized to small random values within a specified range.
