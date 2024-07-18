@@ -30,19 +30,55 @@ After downloading and installing the Self-Learning Plugin, follow these steps to
    ### **Add AI Component to Actor**
 
    1. Open the actor blueprint that will be used for training.
-   2. In the **Components** tab, add the **P_ANN_BP_Component** from the **SelfLearning_AI** to your actor.
+   2. In the **Components** tab, add the **P_ANN_BP_Component** from the **SelfLearning_AI** to your actor. This component will enable the actor to interact with the AI system, allowing it to receive inputs, process data, and produce outputs based on the neural network.
 
    ### **Create Function to Calculate Inputs**
 
-   ### **Create Function to Analize Output**
+   1. **Create a New Function:**
+      Create a new function called CalculateInputs with a float array as the output.
       
+   2. **Define Inputs:**
+      Add logic to collect all necessary inputs for the neural network. These inputs might include sensor data, environmental variables, or other relevant information that the AI needs to make decisions.
+
+   3. **Scale Inputs:**
+      Use the **ScaleValue** function provided by the **P_ANN_BP_Component** to normalize each input value. The function typically requires three parameters: the input value, the minimum expected value, and the maximum expected value.
+      
+   4. **Add Inputs to Array:**
+      Add each scaled input to an array that will be passed to the neural network.
+      
+   5. **Return the Inputs:**
+      Ensure the function returns the array of scaled inputs that will be fed into the neural network.
+      
+   ### **Analyze Output**
+
+   1. **Use the SelectAction Function:**
+      Use the **SelectAction** function from the **P_ANN_BP_Component**. This function takes the previously calculated inputs and outputs an integer that corresponds to a specific action.
+      
+   2. **Switch the Output:**
+      Implement a switch statement or similar logic to handle the output of the SelectAction function. Each output value corresponds to a different action that the actor should take.
+      
+   3. **Implement Actions:**
+      Define the specific actions corresponding to each case in the switch statement. Ensure each case implements a distinct action for the actor.
+
    ### **Calculate and Add Rewards**
 
+   1. **Define Reward Logic:**
+      Add logic to calculate rewards based on the actor's performance. Rewards should be designed to encourage desired behaviors and discourage undesired ones. For example, if the task is to navigate a maze, you might add a reward for moving closer to the goal and a penalty for hitting walls.
+      
+   2. **Update Rewards:**
+      Use the **AddRewards** function from the **P_ANN_BP_Component** to update the actor's total reward value. This function allows you to add a reward and optionally override the current reward value.
+
+      + **Reward:** The amount of reward to be added.
+      + **Override Value:** A boolean indicating whether to set the reward to the specified value (true) or to add to the existing reward (false).
+
+   4. **Integration:**
+      Call this function at appropriate points in the actor's lifecycle, such as after each action or at regular intervals, to continuously update the reward based on performance.
+      
 ## **Configuring the AI Data Assets**
 
 1. Create a new data asset based on the **P_ANN_BP_DT_TrainingValue** class from the **SelfLearning_AI** plugin.
 2. Set the values for the training variables:
-   + ### **Save:**
+   + **Save:**
 
      1. **Load or Save:**
         
@@ -63,7 +99,7 @@ After downloading and installing the Self-Learning Plugin, follow these steps to
           
      4. **Data Assets:** An array of data assets used for training, requiring at least three data assets.
         
-   + ### **Training:**
+   + **Training:**
 
      1. **Training:** Indicates whether the network is currently undergoing training.
 
@@ -78,7 +114,7 @@ After downloading and installing the Self-Learning Plugin, follow these steps to
 
      6. **Min Reward Best Data:** Minimum reward threshold required to retain actor data.
 
-   + ### **Neural Networks Values:**
+   + **Neural Networks Values:**
 
      1. **Input Nodes:** Number of input nodes in the neural network.
 
@@ -109,7 +145,7 @@ After downloading and installing the Self-Learning Plugin, follow these steps to
 
      8. **Max Update Weight Value:** Maximum random range for multiplying weight values during updates.
 
-   + ### **Print Debugs:**
+   + **Print Debugs:**
 
      1. **Print Debug Manager:** Enables debug printing for the training manager.
 
@@ -117,13 +153,13 @@ After downloading and installing the Self-Learning Plugin, follow these steps to
 
 3. Set the values for the save asset:
 
-   + ### **Save Slot:**
+   + **Save Slot:**
 
      1. **Save Name:** Name assigned to the save game.
 
      2. **Save Index:** Index indicating the position of the save game.
 
-   + ### **Save Value:**
+   + **Save Value:**
      Refrain from altering these values as they are intended solely for reading and saving purposes.
 
      1. **Hiddens Nodes:** Hidden nodes configuration within the neural network.
