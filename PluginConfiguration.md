@@ -9,7 +9,7 @@ After downloading and installing the Self-Learning Plugin, follow these steps to
 5. [Running the Training](#running-the-training)
 6. [Deploying the AI](#deploying-the-ai)
     
-## **1. Initial Setup**
+## **Initial Setup**
 
 ### **Verify Installation**
 
@@ -17,7 +17,7 @@ After downloading and installing the Self-Learning Plugin, follow these steps to
    2. Navigate to the **Plugin Folder**.
    3. Ensure there is a folder named **SelfLearning_AI**. If the folder is present, the plugin is successfully installed and enabled.
 
-## **2. Creating a Training Environment**
+## **Creating a Training Environment**
 
 ### **Setup Training Environment**
 
@@ -25,7 +25,7 @@ After downloading and installing the Self-Learning Plugin, follow these steps to
    2. Design the environment where the AI agent will be trained, including necessary elements like obstacles, targets, and pathways.
    3. Save the level.
 
-## **3. Configuring the AI Agent**
+## **Configuring the AI Agent**
 
    ### **Add AI Component to Actor**
 
@@ -38,7 +38,7 @@ After downloading and installing the Self-Learning Plugin, follow these steps to
       
    ### **Calculate and Add Rewards**
 
-## **4. Configuring the AI Data Assets**
+## **Configuring the AI Data Assets**
 
 1. Create a new data asset based on the **P_ANN_BP_DT_TrainingValue** class from the **SelfLearning_AI** plugin.
 2. Set the values for the training variables:
@@ -134,7 +134,7 @@ After downloading and installing the Self-Learning Plugin, follow these steps to
 
      4. **Current Generation:** Indicates the current generation from which values are saved.
 
-## **5. Running the Training**
+## **Running the Training**
 
 ### **Add Training Manager**
 
@@ -142,7 +142,7 @@ After downloading and installing the Self-Learning Plugin, follow these steps to
 
 ### **Adjust Parameters**
 
-## **6. Deploying the AI**
+## **Deploying the AI**
 
 ### **Integrate into Gameplay**
 
