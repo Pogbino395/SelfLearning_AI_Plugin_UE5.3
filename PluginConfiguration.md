@@ -21,16 +21,24 @@ After downloading and installing the Self-Learning Plugin, follow these steps to
 
 ### **Setup Training Environment**
 
-   1. Create a new level or open an existing one in the Content Folder.
-   2. Design the environment where the AI agent will be trained, including necessary elements like obstacles, targets, and pathways.
-   3. Save the level.
+   1. **Open Level:**
+      Create a new level or open an existing one in the Content Folder.
+      
+   2. **Design Environment:**
+      Design the environment where the AI agent will be trained, including necessary elements like obstacles, targets, and pathways.
+      
+   3. **Save level:**
+      Save the level.
 
 ## **Configuring the AI Agent**
 
    ### **Add AI Component to Actor**
 
-   1. Open the actor blueprint that will be used for training.
-   2. In the **Components** tab, add the **P_ANN_BP_Component** from the **SelfLearning_AI** to your actor. This component will enable the actor to interact with the AI system, allowing it to receive inputs, process data, and produce outputs based on the neural network.
+   1. **Select the agent:**
+      Open the actor blueprint that will be used for training.
+
+   1. **Add Component:**
+      In the **Components** tab, add the **P_ANN_BP_Component** from the **SelfLearning_AI** to your actor. This component will enable the actor to interact with the AI system, allowing it to receive inputs, process data, and produce outputs based on the neural network.
 
    ### **Create Function to Calculate Inputs**
 
@@ -78,6 +86,14 @@ After downloading and installing the Self-Learning Plugin, follow these steps to
 
 1. Create a new data asset based on the **P_ANN_BP_DT_TrainingValue** class from the **SelfLearning_AI** plugin.
 2. Set the values for the training variables:
+   + **Initialization:**
+     
+     1. **InitializationTiming:** Decide when to start training or deploying the neural networks.
+        
+        - **StartBeginning:** Initialize the networks at Event BeginPlay.
+       
+        - **CallFunction:** Initialize the networks when calling the function InitializeNetworks from the **P_ANN_BP_Training_Manager**.
+     
    + **Save:**
 
      1. **Load or Save:**
@@ -88,8 +104,7 @@ After downloading and installing the Self-Learning Plugin, follow these steps to
           
         - **Do Not Save:** No actions are taken to load, delete, or save data.
           
-     2. **Best Data Asset:** Specifies the preferred neural network data asset for saving values of the best neural network. If the actor is not
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;actively training, it will utilize the data stored in this data asset for its operations.
+     2. **Best Data Asset:** Specifies the preferred neural network data asset for saving values of the best neural network. If the actor is not actively training, it will utilize the data stored in this data asset for its operations.
         
      3. **Save Generations:** Structs to save a generation best neural network.
         
@@ -109,8 +124,7 @@ After downloading and installing the Self-Learning Plugin, follow these steps to
 
      4. **Class Neural Network:** Specifies the actor class to be spawned for neural network training.
 
-     5. **Spawn Offset:** Defines the distance between each sequentially spawned actor's position relative to the previous one, starting from
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;the P_ANN_BP_DT_TrainingValue's location by default.
+     5. **Spawn Offset:** Defines the distance between each sequentially spawned actor's position relative to the previous one, starting from the P_ANN_BP_DT_TrainingValue's location by default.
 
      6. **Min Reward Best Data:** Minimum reward threshold required to retain actor data.
 
@@ -118,8 +132,7 @@ After downloading and installing the Self-Learning Plugin, follow these steps to
 
      1. **Input Nodes:** Number of input nodes in the neural network.
 
-     2. **Hidden Nodes:** Represents an array of hidden layers within the neural network, where each index corresponds to a distinct node
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;layer.
+     2. **Hidden Nodes:** Represents an array of hidden layers within the neural network, where each index corresponds to a distinct node layer.
 
         - **Nodes Lenght:** Number of nodes per hidden layer.
 
@@ -151,7 +164,7 @@ After downloading and installing the Self-Learning Plugin, follow these steps to
 
      2. **Print Debug ANNs:** Enables debug printing for the neural networks.
 
-3. Set the values for the save asset:
+3. Set the values for the data asset **P_ANN_BP_DT_SaveValue** for saving the neural networks:
 
    + **Save Slot:**
 
@@ -174,9 +187,40 @@ After downloading and installing the Self-Learning Plugin, follow these steps to
 
 ### **Add Training Manager**
 
+1. **Place Training Manager in Level:**
+      Drag and drop the **P_ANN_BP_Training_Manager** blueprint into your level. Position it where you want the training to take place.
+
+2. **Set Training Values:**
+      Assign the **P_ANN_BP_DT_TrainingValue** to the Training Manager. This data asset should contain all the necessary training variables.
+   
 ### **Start Training Session**
 
+1. **Initialize Training:**
+      To start the training, play the level in **Simulate** mode. If the enum is set to **At the Beginning**, the network will initialize automatically. If set to **When a Function is Called**, ensure you manually call the appropriate function in the **P_ANN_BP_Training_Manager** to start the network initialization.
+   
+2. **Check Training Status:**
+      If the AI agents are not training, verify that the Training parameter in the **P_ANN_BP_DT_TrainingValue** is set to false. This setting indicates that the agents are using the best neural network data asset for their operations rather than actively training.
+
+3. **Monitor Progress:**
+      Use the in-editor tools to monitor the progress of your training session. Check the **P_ANN_BP_DT_SaveValue** to obtain detailed information:
+
+    - **Node Values:** Inspect the values of each node, including weights and node value, to understand how the network's internal states are evolving.
+    - **Total Rewards:** View the total rewards accumulated by the network, which helps gauge overall performance.
+    - **Current Generation:** See the generation from which the values are saved.
+
+5. **Evaluate Performance:**
+      Check the performance metrics of your AI agents. This includes their accumulated rewards, success rates, and other relevant statistics.
+   
 ### **Adjust Parameters**
+
+1. **Modify Training Parameters:**
+      If needed, adjust the parameters in your **P_ANN_BP_DT_TrainingValue**. This can include changing the number of actors per generation, the duration of each generation, learning rates, and other neural network settings.
+
+2. **Save Adjustments:**
+      After making changes, ensure you save your data assets and reinitialize the training session to apply the new parameters.
+
+3. **Fine-Tune for Optimization:**
+      Continue tweaking the parameters based on observed performance. Fine-tuning these values can help optimize the learning process and improve the effectiveness of your AI agents.
 
 ## **Deploying the AI**
 
