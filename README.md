@@ -35,8 +35,12 @@ Watch this example to see the progression of a self-learning car in Unreal Engin
 ### **1st Generation**
 In this video, observe the initial attempts of the AI-driven car as it begins learning how to navigate the environment. The car's movements are basic and somewhat erratic as it starts to understand the dynamics of the virtual world.
 
+![1stGeneration-GIF](https://github.com/user-attachments/assets/844ee1e8-c159-4fa1-81ef-349080e92106)
+
 ### **4th Generation**
 This video highlights the significant improvements in the car's navigation skills by the fourth generation of training. Notice how the car moves more smoothly and efficiently, having learned from its previous iterations.
+
+![4thGeneration-GIF](https://github.com/user-attachments/assets/335fb249-d75b-4f0b-a0f5-35f13436d6af)
 
 These videos illustrate the power of reinforcement learning in improving AI behavior over time, providing a clear visual of the learning process and the advancements made through each generation.
 
