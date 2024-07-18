@@ -7,7 +7,7 @@ Welcome to the Self-Learning Plugin for Unreal Engine 5.3! This plugin enables t
 2. [Features](#features)
 3. [Installation](#installation)
 4. [Usage](#usage)
-5. [Self-Learning Car Example](#self-learningcarexample)
+5. [Self-Learning Car Example](#selflearningcarexample)
 6. [Documentation](#documentation)
 7. [License](#license)
  
