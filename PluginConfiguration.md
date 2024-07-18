@@ -2,12 +2,12 @@
 After downloading and installing the Self-Learning Plugin, follow these steps to configure it for your Unreal Engine 5.3 project:
 
 ## **Table of Contents**
-1. [Initial Setup](#initialsetup)
-2. [Creating a Training Environment](#creatingatrainingenvironment)
-3. [Configuring the AI Agent](#configuringtheaiagent)
-4. [Configuring the AI Data Assets](#configuringtheaidataassets)
-5. [Running the Training](#runningthetraining)
-6. [Deploying the AI](#deployingtheai)
+1. [Initial Setup](#initial-setup)
+2. [Creating a Training Environment](#creating-a-training-environment)
+3. [Configuring the AI Agent](#configuring-the-ai-agent)
+4. [Configuring the AI Data Assets](#configuring-the-ai-data-assets)
+5. [Running the Training](#running-the-training)
+6. [Deploying the AI](#deploying-the-ai)
     
 ## **1. Initial Setup**
 
