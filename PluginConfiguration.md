@@ -40,6 +40,11 @@ After downloading and installing the Self-Learning Plugin, follow these steps to
    1. **Add Component:**
       In the **Components** tab, add the **P_ANN_BP_Component** from the **SelfLearning_AI** to your actor. This component will enable the actor to interact with the AI system, allowing it to receive inputs, process data, and produce outputs based on the neural network.
 
+
+<p align="center">
+  <img src=https://github.com/user-attachments/assets/aa968e41-f126-437c-813e-2ce88918d3b5/>
+</p>
+
    ### **Create Function to Calculate Inputs**
 
    1. **Create a New Function:**
@@ -56,6 +61,11 @@ After downloading and installing the Self-Learning Plugin, follow these steps to
       
    5. **Return the Inputs:**
       Ensure the function returns the array of scaled inputs that will be fed into the neural network.
+
+
+<p align="center">
+  <img src=https://github.com/user-attachments/assets/d2379f76-cdaa-4f5a-b960-25a62fd805ad/>
+</p>
       
    ### **Analyze Output**
 
@@ -67,6 +77,11 @@ After downloading and installing the Self-Learning Plugin, follow these steps to
       
    3. **Implement Actions:**
       Define the specific actions corresponding to each case in the switch statement. Ensure each case implements a distinct action for the actor.
+
+
+<p align="center">
+  <img src=https://github.com/user-attachments/assets/0b6cc668-a118-4295-afa7-e229aaa7ce3a>
+</p>
 
    ### **Calculate and Add Rewards**
 
@@ -81,6 +96,11 @@ After downloading and installing the Self-Learning Plugin, follow these steps to
 
    4. **Integration:**
       Call this function at appropriate points in the actor's lifecycle, such as after each action or at regular intervals, to continuously update the reward based on performance.
+
+
+<p align="center">
+  <img src=https://github.com/user-attachments/assets/76c3acc8-329e-4a6d-bc1f-2207f3f94a2c>
+</p>
       
 ## **Configuring the AI Data Assets**
 
@@ -93,7 +113,12 @@ After downloading and installing the Self-Learning Plugin, follow these steps to
         - **StartBeginning:** Initialize the networks at Event BeginPlay.
        
         - **CallFunction:** Initialize the networks when calling the function InitializeNetworks from the **P_ANN_BP_Training_Manager**.
-     
+
+
+        <p align="center">
+          <img src=https://github.com/user-attachments/assets/dbb4e86e-e472-4b86-9498-758913aebebf>
+        </p>
+
    + **Save:**
 
      1. **Load or Save:**
@@ -113,6 +138,11 @@ After downloading and installing the Self-Learning Plugin, follow these steps to
         - **Generation Number:** Indicates which generation's best neural network to save.
           
      4. **Data Assets:** An array of data assets used for training, requiring at least three data assets.
+
+
+        <p align="center">
+          <img src=https://github.com/user-attachments/assets/33ac8421-483b-420a-8047-36646815d3b9>
+        </p>
         
    + **Training:**
 
@@ -127,6 +157,11 @@ After downloading and installing the Self-Learning Plugin, follow these steps to
      5. **Spawn Offset:** Defines the distance between each sequentially spawned actor's position relative to the previous one, starting from the P_ANN_BP_DT_TrainingValue's location by default.
 
      6. **Min Reward Best Data:** Minimum reward threshold required to retain actor data.
+    
+            
+        <p align="center">
+          <img src=https://github.com/user-attachments/assets/693b84f8-742b-4ac9-bef1-3ab69f876ba7>
+        </p>
 
    + **Neural Networks Values:**
 
@@ -157,12 +192,22 @@ After downloading and installing the Self-Learning Plugin, follow these steps to
      7. **Min Update Weight Value:** Minimum random range for multiplying weight values during updates.
 
      8. **Max Update Weight Value:** Maximum random range for multiplying weight values during updates.
+    
+        
+        <p align="center">
+          <img src=https://github.com/user-attachments/assets/943feed2-3775-4710-b9bf-f8d61f2e0ce8>
+        </p>
 
    + **Print Debugs:**
 
      1. **Print Debug Manager:** Enables debug printing for the training manager.
 
      2. **Print Debug ANNs:** Enables debug printing for the neural networks.
+    
+        
+        <p align="center">
+          <img src=https://github.com/user-attachments/assets/7162f39a-ca45-462b-bf5a-a2ba453ceb82>
+        </p>
 
 3. Set the values for the data asset **P_ANN_BP_DT_SaveValue** for saving the neural networks:
 
@@ -171,6 +216,11 @@ After downloading and installing the Self-Learning Plugin, follow these steps to
      1. **Save Name:** Name assigned to the save game.
 
      2. **Save Index:** Index indicating the position of the save game.
+
+   
+        <p align="center">
+          <img src=https://github.com/user-attachments/assets/9522e008-b33a-4e05-9a84-0f85e55b3510>
+        </p>
 
    + **Save Value:**
      Refrain from altering these values as they are intended solely for reading and saving purposes.
@@ -182,6 +232,11 @@ After downloading and installing the Self-Learning Plugin, follow these steps to
      3. **Total Rewards:** Total rewards accumulated by the neural network.
 
      4. **Current Generation:** Indicates the current generation from which values are saved.
+    
+        
+        <p align="center">
+          <img src=https://github.com/user-attachments/assets/ffdb2e3d-f99e-49e0-bf4f-4c12eb4ff5f4>
+        </p>
 
 ## **Running the Training**
 
@@ -192,12 +247,20 @@ After downloading and installing the Self-Learning Plugin, follow these steps to
 
 2. **Set Training Values:**
       Assign the **P_ANN_BP_DT_TrainingValue** to the Training Manager. This data asset should contain all the necessary training variables.
-   
+
+<p align="center">
+  <img src=https://github.com/user-attachments/assets/2f0f9cb0-c9c5-4723-895e-1c0dd066a611>
+</p>
+
 ### **Start Training Session**
 
 1. **Initialize Training:**
       To start the training, play the level in **Simulate** mode. If the enum is set to **At the Beginning**, the network will initialize automatically. If set to **When a Function is Called**, ensure you manually call the appropriate function in the **P_ANN_BP_Training_Manager** to start the network initialization.
-   
+
+<p align="center">
+  <img src=https://github.com/user-attachments/assets/24122643-2488-493d-9880-a5bad826f88e>
+</p>
+
 2. **Check Training Status:**
       If the AI agents are not training, verify that the Training parameter in the **P_ANN_BP_DT_TrainingValue** is set to false. This setting indicates that the agents are using the best neural network data asset for their operations rather than actively training.
 
@@ -207,6 +270,10 @@ After downloading and installing the Self-Learning Plugin, follow these steps to
     - **Node Values:** Inspect the values of each node, including weights and node value, to understand how the network's internal states are evolving.
     - **Total Rewards:** View the total rewards accumulated by the network, which helps gauge overall performance.
     - **Current Generation:** See the generation from which the values are saved.
+      
+<p align="center">
+  <img src=https://github.com/user-attachments/assets/df62d81b-db72-44d4-b80d-223f4859e3fd>
+</p>
 
 5. **Evaluate Performance:**
       Check the performance metrics of your AI agents. This includes their accumulated rewards, success rates, and other relevant statistics.
