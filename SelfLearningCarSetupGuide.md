@@ -100,7 +100,7 @@ Welcome to the Self-Learning Car Setup Guide! This guide will help you configure
 4. **Add Collision Box:**
     Add a **Collision Box** that encloses the entire car mesh.
 
-5. **Add Arrows for Directions:**
+5. **Add Five Arrows for Directions:**
     Add five **Arrow** components in front of the vehicle, each pointing in different directions.
 
 <p float="left">
@@ -225,8 +225,11 @@ Welcome to the Self-Learning Car Setup Guide! This guide will help you configure
 To set up your AI data assets:
 
 1. **Create Save Data Assets:**
+   
     + **Best Data Asset:** Create a data asset to store the best-performing neural network.
+      
     + **Training Data Assets:** Create at least three data assets specifically for training the neural networks. These assets will store different states of the neural network during the training process.
+      
     + **Generation Testing Assets:** Optionally, create additional data assets to save different generations of neural networks. These are used for testing against the best-performing network.
 
 <p float="left">
@@ -237,68 +240,102 @@ To set up your AI data assets:
 2. **Create a Training Values Data Asset:**
 This data asset contains five key sections:
 
-    + **InitializationTiming:**
-        - **Start Timing:** Set the variable to "start at the beginning" to ensure the neural network initializes as soon as training begins.
+    - **InitializationTiming:**
+  
+        - **Start Timing:** Set the variable to **StartBeginning** to ensure the neural network initializes as soon as training begins.
          
-<p align="center">
-  <img src=https://github.com/user-attachments/assets/9f6c2171-5973-47f1-aac3-4051c933e066>
-</p> 
-    + **Save:**
+    <p align="center">
+      <img src=https://github.com/user-attachments/assets/9f6c2171-5973-47f1-aac3-4051c933e066>
+    </p>
+
+    - **Save:**
+  
         - **Save Generations:** Define the data assets to save different generations for testing.
+      
         - **Data Assets:** Include at least three data assets for training.
         
-<p align="center">
-  <img src=https://github.com/user-attachments/assets/b80ed6b2-b7e6-4935-815d-468ddff3a015>
-</p> 
-    + **Training:**
+    <p align="center">
+      <img src=https://github.com/user-attachments/assets/b80ed6b2-b7e6-4935-815d-468ddff3a015>
+    </p> 
+    
+    - **Training:**
+      
         - **Generation Size:** Adjust this based on your PC's processing capability. Larger generation sizes require more computational resources.
         
-<p align="center">
-  <img src=https://github.com/user-attachments/assets/e002ff57-ea51-4947-b216-4d12b7f29187>
-</p> 
+    <p align="center">
+      <img src=https://github.com/user-attachments/assets/e002ff57-ea51-4947-b216-4d12b7f29187>
+    </p> 
+    
     + **NeuralNetworksValues:**
         Follow these values for optimal performance.
 
-<p align="center">
-  <img src=https://github.com/user-attachments/assets/0441421e-2f22-4761-bc93-54d25cb9e337>
-</p> 
+    <p align="center">
+      <img src=https://github.com/user-attachments/assets/0441421e-2f22-4761-bc93-54d25cb9e337>
+    </p> 
+    
     + **PrintDebugs:**
         Decide if you want to print debug information.
         
-<p align="center">
-  <img src=https://github.com/user-attachments/assets/4e3422c1-a326-4b72-a731-9b21ce969b0d>
-</p> 
+    <p align="center">
+      <img src=https://github.com/user-attachments/assets/4e3422c1-a326-4b72-a731-9b21ce969b0d>
+    </p> 
 
 By correctly setting up these data assets, you ensure that your AI has the necessary configuration for both training and deployment.
 
 ## **Running the Training**
 
+1. **Insert the Data Asset:**
+    Ensure the data asset you configured is correctly assigned to the Training Manager in your project.
+    
 <p align="center">
-  <img src=https://github.com/user-attachments/assets/6724860b-4eda-41ff-b6f1-cbc348befb10>
+  <img src=https://github.com/user-attachments/assets/88cc38a1-b40a-4bc6-9f52-214687cc20c4>
 </p> 
 
+2. **Play and Simulate:**
+    Set the game mode to **None**. Start the training session by playing in simulate mode. Allow the simulation to run for as long as you want to train the AI agent.
+   
 <p align="center">
   <img src=https://github.com/user-attachments/assets/c98ddc1d-3084-49e6-958a-e2f2753cda28>
 </p> 
 
 ## **Deploying the AI**
 
+1. **Update Training Data Asset:**
+    Change the **Best Data Asset** variable in your training data asset to the saved neural network you want to use. Set the **Training** variable to false.
+   
 <p align="center">
   <img src=https://github.com/user-attachments/assets/edd5f7ef-e573-4653-9ab4-79084917c868>
 </p> 
+
+2. **Set Up Player Start:**
+    Place the **PlayerStart** near the training manager.
+
+3. **Configure Game Mode:**
+    Set the game mode to **VehicleAdvGameMode**.
 
 <p align="center">
   <img src=https://github.com/user-attachments/assets/acb91350-de6c-489d-8c77-e3a7d10633a7>
 </p> 
 
-<p align="center">
-  <img src=https://github.com/user-attachments/assets/dbf34ef9-90a2-4401-adf9-f81969835b33>
-</p> 
+4. **Adjust Throttle and Brake:**
+   
+    + Remove every pin attached to the brake or throttle, leaving only the steering.
+  
+    <p align="center">
+      <img src=https://github.com/user-attachments/assets/dbf34ef9-90a2-4401-adf9-f81969835b33>
+    </p>
+
+    + In the **Event Tick**, after the **Interps to Original Rotation** from the vehicle movement component, add the function **Set Throttle Input**.
+  
+    + Use the acceleration variable (the same as the one used in the AI Agent) as the input for the **Set Throttle Input** function.
 
 <p align="center">
   <img src=https://github.com/user-attachments/assets/e1de868f-e082-4eb1-a920-815270c06051>
 </p> 
 
+5. **Play and Compete:**
+    Press play in Selected Viewport and try to win against the AI.
+   
 <p align="center">
   <img src=https://github.com/user-attachments/assets/03321b80-5d26-4a18-9cfd-d428baad3d59>
 </p> 
@@ -319,3 +356,5 @@ This video highlights the significant improvements in the car's navigation skill
 <p align="center">
   <img src=https://github.com/user-attachments/assets/335fb249-d75b-4f0b-a0f5-35f13436d6af alt="animated" />
 </p>
+
+By following these steps, you will be able to effectively set up and deploy your self-learning car AI within Unreal Engine 5.3. This ensures that your AI will drive autonomously and adapt to challenges in the gameplay environment, providing a dynamic and engaging experience.
