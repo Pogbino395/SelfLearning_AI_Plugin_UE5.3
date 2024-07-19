@@ -43,7 +43,7 @@ After downloading and installing the Self-Learning Plugin, follow these steps to
    ### **Create Function to Calculate Inputs**
 
    1. **Create a New Function:**
-      Create a new function called CalculateInputs with a float array as the output.
+      Create a new function called **CalculateInputs** with a float array as the output.
       
    2. **Define Inputs:**
       Add logic to collect all necessary inputs for the neural network. These inputs might include sensor data, environmental variables, or other relevant information that the AI needs to make decisions.
@@ -60,7 +60,7 @@ After downloading and installing the Self-Learning Plugin, follow these steps to
    ### **Analyze Output**
 
    1. **Use the SelectAction Function:**
-      Use the **SelectAction** function from the **P_ANN_BP_Component**. This function takes the previously calculated inputs and outputs an integer that corresponds to a specific action.
+      Use the **SelectAction** function from the **P_ANN_BP_Component**. This function takes the previously calculated inputs and outputs an integer that corresponds to a specific action. Call this function in the **Event Tick** or at the point when an action should be performed.
       
    2. **Switch the Output:**
       Implement a switch statement or similar logic to handle the output of the SelectAction function. Each output value corresponds to a different action that the actor should take.
@@ -226,5 +226,23 @@ After downloading and installing the Self-Learning Plugin, follow these steps to
 
 ### **Integrate into Gameplay**
 
-### **Test and Finalize**
+1. **Adjust Training Values:** Adjust the parameter in your **P_ANN_BP_DT_TrainingValue**:
+      + Set the **Training** parameter to false. This ensures the AI uses the pre-trained data instead of training further.
+      + Then, set the **BestDataAsset** to the saved neural network data asset you want the AI to use.
+      + Adjust the **InitializationTiming** parameter if you want to change when the initialization occurs.
+
+2. **Gameplay Execution:**
+      By pressing play, the agent will no longer train and will perform according to the pre-trained neural network data.
    
+### **Test and Finalize**
+
+1. **In-Game Testing:**
+      Conduct thorough in-game testing to observe the AI behavior in various scenarios. Monitor the AI performance and ensure it meets the desired gameplay requirements.
+
+2. **Bug Fixing:**
+      Identify and fix any bugs or issues that arise during testing. Ensure that the AI components and neural networks are functioning correctly without causing any gameplay disruptions.
+
+3. **Final Validation:**
+      Perform a final validation to confirm that the AI behaves as expected across different levels and game modes. Validate that the AI maintains consistent performance and reliability.
+
+By following these steps, you can successfully integrate and deploy your trained AI into your Unreal Engine 5.3 project, ensuring it performs effectively within the gameplay environment.
