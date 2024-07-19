@@ -1,5 +1,5 @@
 # **Plugin Configuration**
-After downloading and installing the Self-Learning Plugin, follow these steps to configure it for your Unreal Engine 5.3 project:
+Welcome to the Plugin Configuration! After downloading and installing the Self-Learning Plugin, follow these steps to configure it for your Unreal Engine 5.3 project:
 
 ## **Table of Contents**
 1. [Initial Setup](#initial-setup)
