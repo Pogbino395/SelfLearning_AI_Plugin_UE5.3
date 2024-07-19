@@ -7,9 +7,8 @@ Welcome to the Self-Learning Plugin for Unreal Engine 5.3! This plugin enables t
 2. [Features](#features)
 3. [Installation](#installation)
 4. [Usage](#usage)
-5. [Self-Learning Car Example](#self-learning-car-example)
-6. [Documentation](#documentation)
-7. [License](#license)
+5. [Documentation](#documentation)
+6. [License](#license)
  
 ## **Introduction**
 The Self-Learning Plugin leverages machine learning algorithms to allow AI agents to learn from their environment and improve their task performance over time. This plugin is designed to be user-friendly and easily integrable with existing Unreal Engine projects.
@@ -28,19 +27,6 @@ The Self-Learning Plugin leverages machine learning algorithms to allow AI agent
 
 ## **Usage**
 Once the plugin is installed and enabled, you can start integrating self-learning AI into your project. Refer to the documentation pages below for detailed instructions on setup and configuration.
-
-## **Self-Learning Car Example**
-Watch this example to see the progression of a self-learning car in Unreal Engine 5.3. This demonstration includes two short videos showcasing the car's development through different generations of training.
-
-### **1st Generation**
-In this video, observe the initial attempts of the AI-driven car as it begins learning how to navigate the environment. The car's movements are basic and somewhat erratic as it starts to understand the dynamics of the virtual world.
-
-![1stGeneration-GIF](https://github.com/user-attachments/assets/844ee1e8-c159-4fa1-81ef-349080e92106)
-
-### **4th Generation**
-This video highlights the significant improvements in the car's navigation skills by the fourth generation of training. Notice how the car moves more smoothly and efficiently, having learned from its previous iterations.
-
-![4thGeneration-GIF](https://github.com/user-attachments/assets/335fb249-d75b-4f0b-a0f5-35f13436d6af)
 
 These videos illustrate the power of reinforcement learning in improving AI behavior over time, providing a clear visual of the learning process and the advancements made through each generation.
 
