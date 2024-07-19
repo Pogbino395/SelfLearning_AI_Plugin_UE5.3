@@ -244,7 +244,7 @@ Welcome to the Plugin Configuration! After downloading and installing the Self-L
 ### **Start Training Session**
 
 1. **Initialize Training:**
-      To start the training, play the level in **Simulate** mode. If the enum is set to **At the Beginning**, the network will initialize automatically. If set to **When a Function is Called**, ensure you manually call the appropriate function in the **P_ANN_BP_Training_Manager** to start the network initialization.
+      To start the training, play the level in **Simulate** mode. If the enum is set to **At the Beginning**, the network will initialize automatically. If set to **When a Function is Called**, ensure you manually call the appropriate function in the **P_ANN_BP_Training_Manager** to start the network initialization. Set the game mode to **None** to avoid any issues.
 
 <p align="center">
   <img src=https://github.com/user-attachments/assets/11f9deae-6a60-4ccf-810b-59b56f5895cf>
