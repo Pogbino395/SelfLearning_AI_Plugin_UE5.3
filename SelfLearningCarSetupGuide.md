@@ -45,7 +45,7 @@ Welcome to the Self-Learning Car Setup Guide! This guide will help you configure
 ### **Use the Landscape Tool**
 
 1. **Create a New Layer:**
-   Open the Landscape Tool and create a new layer.
+    Open the Landscape Tool and create a new layer.
       
 <p align="center">
   <img src=https://github.com/user-attachments/assets/9529bae8-2e2c-4446-8141-498f71cfbe57>
@@ -59,20 +59,161 @@ Welcome to the Self-Learning Car Setup Guide! This guide will help you configure
 </p>
    
 3. **Set the mesh to the track:**
-   In the Landscape Tool, select **Splines**. Open the **Segments** section, and in the **Details** panel, add the mesh to the **Spline Meshes** field.
+    In the Landscape Tool, select **Splines**. Open the **Segments** section, and in the **Details** panel, add the mesh to the **Spline Meshes** field.
 
 <p align="center">
   <img src=https://github.com/user-attachments/assets/0c99da15-79d1-41de-b361-a47eb9166116>
 </p>
 
 4. **Shape the Track:**
-   Press **Ctrl + Left Click** to place a new segment. Adjust the track to form a circular shape.
+    Press **Ctrl + Left Click** to place a new segment. Adjust the track to form a circular shape.
 
 <p align="center">
   <img src=https://github.com/user-attachments/assets/40c71100-4911-47d9-8d9c-c0d0dab4ac90>
 </p>
 
+5. **Add Checkpoints:**
+    Create a new blueprint **Checkpoint** that contains only a collision box. Place this checkpoint blueprint at various positions along the track to serve as reference points for the AI.
+
+<p align="center">
+  <img src=https://github.com/user-attachments/assets/2f643cab-af44-4566-99a5-6a6cf6550373>
+</p>
+
 ## **Configuring the AI Agent**
+
+### **Create a Copy of VehicleAdvPawn**
+
+1. **Duplicate VehicleAdvPawn:**
+    Create a copy of the **VehicleAdvPawn** blueprint. Use the original for player control, allowing you to play against the AI.
+   
+### **Modify Components**
+
+1. **Remove Unnecessary Components:**
+    In the duplicated VehicleAdvPawn blueprint, remove the SpringArm components and Camera components.
+
+2. **Add P_ANN_BP_Component Component:**
+    Add the **P_ANN_BP_Component** component to the blueprint.
+
+3. **Set Skeletal Mesh:**
+    Set the **Skeletal Mesh** to the desired vehicle model.
+
+4. **Add Collision Box:**
+    Add a **Collision Box** that encloses the entire car mesh.
+
+5. **Add Arrows for Directions:**
+    Add five **Arrow** components in front of the vehicle, each pointing in different directions.
+
+<p float="left">
+  <img src=https://github.com/user-attachments/assets/635e9301-cdc9-4a21-8c60-f8aa8b10fb41 width="300" />
+  <img src=https://github.com/user-attachments/assets/d9d9d062-cd07-470b-9589-31eb3968a838 width="700" /> 
+</p>
+
+### **Configure Collisions**
+
+1. **Car Mesh Collision:**
+    + Set the car mesh Collision Preset to **Custom**, the Object Type to **Vehicle**.
+    + Block everything except **Vehicle**, which should be set to **Ignore**.
+
+<p align="center">
+  <img src=https://github.com/user-attachments/assets/497c7736-f86a-481f-97b9-dda4c515da76>
+</p>
+   
+2. **Collision Box:**
+    + Set the collision box Collision Preset to **Custom** and the Object Type to **Vehicle**, matching the car mesh settings.
+    + Overlap everything except **Vehicle**.
+
+<p align="center">
+  <img src=https://github.com/user-attachments/assets/24cc05af-6abb-4264-a9a6-15a3ee25f4f8>
+</p>
+
+### **Create Functions**
+
+1. **Make Arrows Array:**
+    Create a function to add all the arrows to an array.
+
+<p align="center">
+  <img src=https://github.com/user-attachments/assets/3ed280f3-6925-473c-86cd-4548c23b67e4>
+</p>
+
+2. **Line Trace:**
+    Create a function that performs a line trace from the car in the direction of the arrow. Output the distance from the hit of the track border, scaled using the P_ANN_BP_Component's provided function **Scale Value** (min: 0, max: 2000).
+
+<p align="center">
+  <img src=https://github.com/user-attachments/assets/db0ce6e5-8ee0-4372-8968-734e54bcca66>
+</p>
+
+3. **Calculate Inputs:**
+    Create a pure function to calculate the inputs. Use a **For Each Loop** to iterate through the arrows, using the line trace function.
+
+<p align="center">
+  <img src=https://github.com/user-attachments/assets/2bc61e9f-77fd-48f6-9735-83bf9aace505>
+</p>
+
+### **Event Graph Adjustments**
+
+1. **Remove Unnecessary Functions:**
+    Delete all functions except **Event Begin Play** and **Event Tick**.
+
+2. **Event Begin Play Setup:**
+    At the end, add the **Make Arrows Array** function.
+
+<p align="center">
+  <img src=https://github.com/user-attachments/assets/75abe989-9ba4-40e4-ab3a-0329821bc05b>
+</p>
+
+3. **Event Tick Setup:**
+    Remove Interps to Original Rotation from Event Tick. Add a **Sequence** node to **Event Tick**:
+    + **First pin:** Set Angular Damping.
+    + **Second pin:** Call a new custom event called **Neural Network**.
+ 
+<p align="center">
+  <img src=https://github.com/user-attachments/assets/a0f79b26-1860-4adf-b4d5-0f5f98987de4>
+</p> 
+
+### **Custom Event: Neural Network**
+
+1. **Select Action:**
+    Add the **Select Action** function from the P_ANN_BP_Component. Input the output of the **Calculate Inputs** function.
+
+2. **Switch on Integer:**
+    Use a **Switch on Int** node with options 0, 1, and 2 (no default). Create a variable called **Steering:**
+    + **Int 0:** Steering 0
+    + **Int 1:** Steering 1
+    + **Int 2:** Steering -1
+
+<p align="center">
+  <img src=https://github.com/user-attachments/assets/5810dc35-83ab-4780-a5ab-d1d45d123131>
+</p> 
+
+3. **Set Steering Input:**
+    Connect the pins to the **Set Steering Input** function from the **Vehicle Movement Component**. Insert the **Steering** variable as the input.
+
+4. **Set Throttle Input:**
+    Add the **Set Throttle Input** function from the **Vehicle Movement Component**. Insert a new variable called **Acceleration** with the desired acceleration (e.g., 0.3 for completing the track without hitting walls).
+
+<p align="center">
+  <img src=https://github.com/user-attachments/assets/2fbbdf9b-c364-4bd7-8940-e1d876d0c626>
+</p> 
+
+### **Rewards Handling**
+
+1. **Cast to Checkpoint:**
+    Check if the overlapping actor is a checkpoint.
+
+2. **Reward System:**
+    + If the overlapping actor is a checkpoint:
+        - Use the **Add Rewards** function provided by the P_ANN_BP_Component.
+        - Set **Reward** to 100.
+        - Set **Override Value** to false.
+     
+    + If the overlapping actor is not a checkpoint:
+        - Use the **Add Rewards** function provided by the P_ANN_BP_Component.
+        - Set **Reward** to -5.
+        - Set **Override Value** to false.
+
+<p align="center">
+  <img src=https://github.com/user-attachments/assets/d85b7a02-9e02-41fa-8f56-963b20907225>
+</p> 
 
 ## **Configuring the AI Data Assets**
 
