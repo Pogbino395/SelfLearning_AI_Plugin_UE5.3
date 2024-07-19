@@ -217,9 +217,62 @@ Welcome to the Self-Learning Car Setup Guide! This guide will help you configure
 
 ## **Configuring the AI Data Assets**
 
+<p float="left">
+  <img src=https://github.com/user-attachments/assets/22df42b2-b54b-4e26-aa38-4ec4c8dc8c15 width="500" />
+  <img src=https://github.com/user-attachments/assets/4aa962a0-e862-4178-80a4-99f0173186ca width="500" /> 
+</p>
+
+<p align="center">
+  <img src=https://github.com/user-attachments/assets/9f6c2171-5973-47f1-aac3-4051c933e066>
+</p> 
+
+<p align="center">
+  <img src=https://github.com/user-attachments/assets/b80ed6b2-b7e6-4935-815d-468ddff3a015>
+</p> 
+
+<p align="center">
+  <img src=https://github.com/user-attachments/assets/e002ff57-ea51-4947-b216-4d12b7f29187>
+</p> 
+
+<p align="center">
+  <img src=https://github.com/user-attachments/assets/0441421e-2f22-4761-bc93-54d25cb9e337>
+</p> 
+
+<p align="center">
+  <img src=https://github.com/user-attachments/assets/4e3422c1-a326-4b72-a731-9b21ce969b0d>
+</p> 
+
 ## **Running the Training**
 
+<p align="center">
+  <img src=https://github.com/user-attachments/assets/6724860b-4eda-41ff-b6f1-cbc348befb10>
+</p> 
+
+<p align="center">
+  <img src=https://github.com/user-attachments/assets/c98ddc1d-3084-49e6-958a-e2f2753cda28>
+</p> 
+
 ## **Deploying the AI**
+
+<p align="center">
+  <img src=https://github.com/user-attachments/assets/edd5f7ef-e573-4653-9ab4-79084917c868>
+</p> 
+
+<p align="center">
+  <img src=https://github.com/user-attachments/assets/acb91350-de6c-489d-8c77-e3a7d10633a7>
+</p> 
+
+<p align="center">
+  <img src=https://github.com/user-attachments/assets/2a4e494d-4a6a-4798-8c33-f10b25ed1413>
+</p> 
+
+<p align="center">
+  <img src=https://github.com/user-attachments/assets/e1de868f-e082-4eb1-a920-815270c06051>
+</p> 
+
+<p align="center">
+  <img src=https://github.com/user-attachments/assets/03321b80-5d26-4a18-9cfd-d428baad3d59>
+</p> 
 
 ## **Self-Learning Car Example**
 Watch this example to see the progression of a self-learning car in Unreal Engine 5.3. This demonstration includes two short videos showcasing the car's development through different generations of training.
