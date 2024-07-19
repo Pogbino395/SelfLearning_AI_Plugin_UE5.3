@@ -111,7 +111,9 @@ Welcome to the Self-Learning Car Setup Guide! This guide will help you configure
 ### **Configure Collisions**
 
 1. **Car Mesh Collision:**
+   
     + Set the car mesh Collision Preset to **Custom**, the Object Type to **Vehicle**.
+      
     + Block everything except **Vehicle**, which should be set to **Ignore**.
 
 <p align="center">
@@ -119,7 +121,9 @@ Welcome to the Self-Learning Car Setup Guide! This guide will help you configure
 </p>
    
 2. **Collision Box:**
+   
     + Set the collision box Collision Preset to **Custom** and the Object Type to **Vehicle**, matching the car mesh settings.
+      
     + Overlap everything except **Vehicle**.
 
 <p align="center">
@@ -163,7 +167,9 @@ Welcome to the Self-Learning Car Setup Guide! This guide will help you configure
 
 3. **Event Tick Setup:**
     Remove Interps to Original Rotation from Event Tick. Add a **Sequence** node to **Event Tick**:
+   
     + **First pin:** Set Angular Damping.
+      
     + **Second pin:** Call a new custom event called **Neural Network**.
  
 <p align="center">
@@ -216,31 +222,54 @@ Welcome to the Self-Learning Car Setup Guide! This guide will help you configure
 </p> 
 
 ## **Configuring the AI Data Assets**
+To set up your AI data assets:
+
+1. **Create Save Data Assets:**
+    + **Best Data Asset:** Create a data asset to store the best-performing neural network.
+    + **Training Data Assets:** Create at least three data assets specifically for training the neural networks. These assets will store different states of the neural network during the training process.
+    + **Generation Testing Assets:** Optionally, create additional data assets to save different generations of neural networks. These are used for testing against the best-performing network.
 
 <p float="left">
   <img src=https://github.com/user-attachments/assets/22df42b2-b54b-4e26-aa38-4ec4c8dc8c15 width="500" />
   <img src=https://github.com/user-attachments/assets/4aa962a0-e862-4178-80a4-99f0173186ca width="500" /> 
 </p>
 
+2. **Create a Training Values Data Asset:**
+This data asset contains five key sections:
+
+    + **InitializationTiming:**
+        - **Start Timing:** Set the variable to "start at the beginning" to ensure the neural network initializes as soon as training begins.
+         
 <p align="center">
   <img src=https://github.com/user-attachments/assets/9f6c2171-5973-47f1-aac3-4051c933e066>
 </p> 
-
+    + **Save:**
+        - **Save Generations:** Define the data assets to save different generations for testing.
+        - **Data Assets:** Include at least three data assets for training.
+        
 <p align="center">
   <img src=https://github.com/user-attachments/assets/b80ed6b2-b7e6-4935-815d-468ddff3a015>
 </p> 
-
+    + **Training:**
+        - **Generation Size:** Adjust this based on your PC's processing capability. Larger generation sizes require more computational resources.
+        
 <p align="center">
   <img src=https://github.com/user-attachments/assets/e002ff57-ea51-4947-b216-4d12b7f29187>
 </p> 
+    + **NeuralNetworksValues:**
+        Follow these values for optimal performance.
 
 <p align="center">
   <img src=https://github.com/user-attachments/assets/0441421e-2f22-4761-bc93-54d25cb9e337>
 </p> 
-
+    + **PrintDebugs:**
+        Decide if you want to print debug information.
+        
 <p align="center">
   <img src=https://github.com/user-attachments/assets/4e3422c1-a326-4b72-a731-9b21ce969b0d>
 </p> 
+
+By correctly setting up these data assets, you ensure that your AI has the necessary configuration for both training and deployment.
 
 ## **Running the Training**
 
