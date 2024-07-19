@@ -263,7 +263,7 @@ Welcome to the Self-Learning Car Setup Guide! This guide will help you configure
 </p> 
 
 <p align="center">
-  <img src=https://github.com/user-attachments/assets/2a4e494d-4a6a-4798-8c33-f10b25ed1413>
+  <img src=https://github.com/user-attachments/assets/dbf34ef9-90a2-4401-adf9-f81969835b33>
 </p> 
 
 <p align="center">
