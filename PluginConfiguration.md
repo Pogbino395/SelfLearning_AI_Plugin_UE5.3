@@ -40,7 +40,6 @@ After downloading and installing the Self-Learning Plugin, follow these steps to
    1. **Add Component:**
       In the **Components** tab, add the **P_ANN_BP_Component** from the **SelfLearning_AI** to your actor. This component will enable the actor to interact with the AI system, allowing it to receive inputs, process data, and produce outputs based on the neural network.
 
-
 <p align="center">
   <img src=https://github.com/user-attachments/assets/aa968e41-f126-437c-813e-2ce88918d3b5/>
 </p>
@@ -62,7 +61,6 @@ After downloading and installing the Self-Learning Plugin, follow these steps to
    5. **Return the Inputs:**
       Ensure the function returns the array of scaled inputs that will be fed into the neural network.
 
-
 <p align="center">
   <img src=https://github.com/user-attachments/assets/d2379f76-cdaa-4f5a-b960-25a62fd805ad/>
 </p>
@@ -77,7 +75,6 @@ After downloading and installing the Self-Learning Plugin, follow these steps to
       
    3. **Implement Actions:**
       Define the specific actions corresponding to each case in the switch statement. Ensure each case implements a distinct action for the actor.
-
 
 <p align="center">
   <img src=https://github.com/user-attachments/assets/0b6cc668-a118-4295-afa7-e229aaa7ce3a>
@@ -97,7 +94,6 @@ After downloading and installing the Self-Learning Plugin, follow these steps to
    4. **Integration:**
       Call this function at appropriate points in the actor's lifecycle, such as after each action or at regular intervals, to continuously update the reward based on performance.
 
-
 <p align="center">
   <img src=https://github.com/user-attachments/assets/76c3acc8-329e-4a6d-bc1f-2207f3f94a2c>
 </p>
@@ -113,7 +109,6 @@ After downloading and installing the Self-Learning Plugin, follow these steps to
         - **StartBeginning:** Initialize the networks at Event BeginPlay.
        
         - **CallFunction:** Initialize the networks when calling the function InitializeNetworks from the **P_ANN_BP_Training_Manager**.
-
 
         <p align="center">
           <img src=https://github.com/user-attachments/assets/dbb4e86e-e472-4b86-9498-758913aebebf>
@@ -139,7 +134,6 @@ After downloading and installing the Self-Learning Plugin, follow these steps to
           
      4. **Data Assets:** An array of data assets used for training, requiring at least three data assets.
 
-
         <p align="center">
           <img src=https://github.com/user-attachments/assets/33ac8421-483b-420a-8047-36646815d3b9>
         </p>
@@ -158,7 +152,6 @@ After downloading and installing the Self-Learning Plugin, follow these steps to
 
      6. **Min Reward Best Data:** Minimum reward threshold required to retain actor data.
     
-            
         <p align="center">
           <img src=https://github.com/user-attachments/assets/693b84f8-742b-4ac9-bef1-3ab69f876ba7>
         </p>
@@ -193,7 +186,6 @@ After downloading and installing the Self-Learning Plugin, follow these steps to
 
      8. **Max Update Weight Value:** Maximum random range for multiplying weight values during updates.
     
-        
         <p align="center">
           <img src=https://github.com/user-attachments/assets/943feed2-3775-4710-b9bf-f8d61f2e0ce8>
         </p>
@@ -203,7 +195,6 @@ After downloading and installing the Self-Learning Plugin, follow these steps to
      1. **Print Debug Manager:** Enables debug printing for the training manager.
 
      2. **Print Debug ANNs:** Enables debug printing for the neural networks.
-    
         
         <p align="center">
           <img src=https://github.com/user-attachments/assets/7162f39a-ca45-462b-bf5a-a2ba453ceb82>
@@ -217,13 +208,12 @@ After downloading and installing the Self-Learning Plugin, follow these steps to
 
      2. **Save Index:** Index indicating the position of the save game.
 
-   
         <p align="center">
           <img src=https://github.com/user-attachments/assets/9522e008-b33a-4e05-9a84-0f85e55b3510>
         </p>
 
    + **Save Value:**
-     Refrain from altering these values as they are intended solely for reading and saving purposes.
+     *Refrain from altering these values as they are intended solely for reading and saving purposes.*
 
      1. **Hiddens Nodes:** Hidden nodes configuration within the neural network.
 
@@ -232,7 +222,6 @@ After downloading and installing the Self-Learning Plugin, follow these steps to
      3. **Total Rewards:** Total rewards accumulated by the neural network.
 
      4. **Current Generation:** Indicates the current generation from which values are saved.
-    
         
         <p align="center">
           <img src=https://github.com/user-attachments/assets/ffdb2e3d-f99e-49e0-bf4f-4c12eb4ff5f4>
