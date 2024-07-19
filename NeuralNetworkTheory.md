@@ -1,7 +1,9 @@
 # **Neural Network Theory**
 Welcome to the Neural Network Theory! The Self-Learning Plugin for Unreal Engine 5.3 utilizes a neural network to enable AI agents to learn and improve their task performance. This page explains the theory behind the neural network implementation used in this plugin.
 
-![AI-Scheme drawio](https://github.com/user-attachments/assets/03850b51-36a7-4ee4-8c11-74faa3f21b85)
+<p align="center">
+  <img src=https://github.com/user-attachments/assets/599ced15-ac23-46d9-9870-2fe195b9ae55>
+</p>
 
 ## **Table of Contents**
 1. [Introduction](#introduction)
