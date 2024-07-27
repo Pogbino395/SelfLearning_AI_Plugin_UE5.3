@@ -39,7 +39,7 @@ Welcome to the Self-Learning Car Setup Guide! This guide will help you configure
     Create a mesh with a floor and two borders to define the track layout.
 
 <p align="center">
-  <img src=https://github.com/user-attachments/assets/510492a6-9527-4e35-8cc0-b18ba5ba9346>
+  <img src=https://github.com/user-attachments/assets/510492a6-9527-4e35-8cc0-b18ba5ba9346 width="700"/>
 </p>
 
 ### **Use the Landscape Tool**
@@ -103,9 +103,9 @@ Welcome to the Self-Learning Car Setup Guide! This guide will help you configure
 5. **Add Five Arrows for Directions:**
     Add five **Arrow** components in front of the vehicle, each pointing in different directions.
 
-<p float="left">
-  <img src=https://github.com/user-attachments/assets/635e9301-cdc9-4a21-8c60-f8aa8b10fb41 width="300" />
-  <img src=https://github.com/user-attachments/assets/d9d9d062-cd07-470b-9589-31eb3968a838 width="700" /> 
+<p align="center">
+  <img src=https://github.com/user-attachments/assets/635e9301-cdc9-4a21-8c60-f8aa8b10fb41 width="300"/>
+  <img src=https://github.com/user-attachments/assets/d9d9d062-cd07-470b-9589-31eb3968a838 width="300" height="270"/> 
 </p>
 
 ### **Configure Collisions**
@@ -233,8 +233,8 @@ To set up your AI data assets:
     + **Generation Testing Assets:** Optionally, create additional data assets to save different generations of neural networks. These are used for testing against the best-performing network.
 
 <p float="left">
-  <img src=https://github.com/user-attachments/assets/22df42b2-b54b-4e26-aa38-4ec4c8dc8c15 width="500" />
-  <img src=https://github.com/user-attachments/assets/4aa962a0-e862-4178-80a4-99f0173186ca width="500" /> 
+  <img src=https://github.com/user-attachments/assets/22df42b2-b54b-4e26-aa38-4ec4c8dc8c15 width="500"/>
+  <img src=https://github.com/user-attachments/assets/4aa962a0-e862-4178-80a4-99f0173186ca width="500"/> 
 </p>
 
 2. **Create a Training Values Data Asset:**
@@ -320,9 +320,10 @@ By correctly setting up these data assets, you ensure that your AI has the neces
 4. **Adjust Throttle and Brake:**
    
     + Remove every pin attached to the brake or throttle, leaving only the steering.
-  
+      
     <p align="center">
-      <img src=https://github.com/user-attachments/assets/dbf34ef9-90a2-4401-adf9-f81969835b33>
+      <img src=https://github.com/user-attachments/assets/b33a405a-1d2b-4002-8862-2516b16906b9 width="450"/>
+      <img src=https://github.com/user-attachments/assets/7e541951-9af0-4ff1-b2cd-eb22c98d1e3a width="450" height="285"/> 
     </p>
 
     + In the **Event Tick**, after the **Interps to Original Rotation** from the vehicle movement component, add the function **Set Throttle Input**.
