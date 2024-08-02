@@ -152,17 +152,17 @@ The weight adjustment process in our plugin is designed to be simple yet effecti
 
 4. **Update Weights:**
 
-$$w_{1,1} = w_{1,1} + \alpha \cdot \delta_{1,1}$$
+$$w_{1,1} = w_{1,1} + \alpha \cdot (w_{1,1} - w_{1,1} \cdot \delta_{1,1})$$
 
-$$w_{1,2} = w_{1,2} + \alpha \cdot \delta_{1,2}$$
+$$w_{1,2} = w_{1,2} + \alpha \cdot (w_{1,2} - w_{1,2} \cdot \delta_{1,2})$$
 
-$$w_{2,1} = w_{2,1} + \alpha \cdot \delta_{2,1}$$
+$$w_{2,1} = w_{2,1} + \alpha \cdot (w_{2,1} - w_{2,1} \cdot \delta_{2,1})$$
 
-$$w_{2,2} = w_{2,2} + \alpha \cdot \delta_{2,2}$$
+$$w_{2,2} = w_{2,2} + \alpha \cdot (w_{2,2} - w_{2,2} \cdot \delta_{2,2})$$
 
-$$w_{3,1} = w_{3,1} + \alpha \cdot \delta_{3,1}$$
+$$w_{3,1} = w_{3,1} + \alpha \cdot (w_{3,1} - w_{3,1} \cdot \delta_{3,1})$$
 
-$$w_{3,2} = w_{3,2} + \alpha \cdot \delta_{3,2}$$
+$$w_{3,2} = w_{3,2} + \alpha \cdot (w_{3,2} - w_{3,2} \cdot \delta_{3,2})$$
 
 ## **Optimization Strategy**
 The optimization strategy employed by the Self-Learning Plugin focuses on:
