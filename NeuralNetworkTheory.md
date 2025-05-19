@@ -46,11 +46,11 @@ An AI agent in the Self-Learning Plugin acts as the entity that interacts with t
 The AI agent, powered by the neural network, is the cornerstone of the Self-Learning Plugin, enabling dynamic and intelligent behavior within Unreal Engine 5.3 environments.
 
 ## **Nodes**
-Nodes are the fundamental units of a neural network, responsible for processing input data and passing signals through the network. In the Self-Learning Plugin, nodes are organized into layers with the following characteristics:
+Nodes are the fundamental units of a neural network, responsible for processing input data and passing signals through the network. All nodes are connected by weighted links, which determine the strength of the signals passed between them. In the Self-Learning Plugin, nodes are organized into layers with the following characteristics:
 
 1. **Input Nodes:** Receive and pass raw input values to the first hidden layer; no activation function is applied.
-2. **Hidden Layers:** Process information using a defined activation function.
-3. **Output Layer:** Produce the network’s final output using their own activation function, typically suited to the task.
+2. **Hidden Nodes:** Process information using a defined activation function.
+3. **Output Nodes:** Produce the network’s final output using their own activation function, typically suited to the task.
 
 ## **Weight Initialization**
 Proper initialization of weights is crucial for the effective training of neural networks. In the Self-Learning Plugin, weights are initialized to small random values within a specified range.
