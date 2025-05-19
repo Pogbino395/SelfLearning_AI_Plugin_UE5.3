@@ -8,13 +8,14 @@ Welcome to the Neural Network Theory! The Self-Learning Plugin for Unreal Engine
 ## **Table of Contents**
 1. [Introduction](#introduction)
 2. [AI Agent](#ai-agent)
-3. [Weight Initialization](#weight-initialization)
-4. [Forward Propagation](#forward-propagation)
-5. [Activation Functions](#activation-functions)
-6. [Rewards and Selection of the Best Neural Network](#rewards-and-selection-of-the-best-neural-network)
-7. [Backward Propagation](#backward-propagation)
-8. [Weight Adjustment](#weight-adjustment)
-9. [Optimization Strategy](#optimization-strategy)
+3. [Nodes](#nodes)
+4. [Weight Initialization](#weight-initialization)
+5. [Forward Propagation](#forward-propagation)
+6. [Activation Functions](#activation-functions)
+7. [Rewards and Selection of the Best Neural Network](#rewards-and-selection-of-the-best-neural-network)
+8. [Backward Propagation](#backward-propagation)
+9. [Weight Adjustment](#weight-adjustment)
+10. [Optimization Strategy](#optimization-strategy)
    
 ## **Introduction**
 Neural networks are a key component of modern machine learning, allowing systems to learn from data and make decisions based on that learning. In the Self-Learning Plugin, a neural network is employed to enable AI agents to perform and improve in various tasks within Unreal Engine 5.3 environments.
@@ -43,6 +44,13 @@ An AI agent in the Self-Learning Plugin acts as the entity that interacts with t
 + This process ensures that the agent adapts to changing environments and improves its ability to complete tasks efficiently.
 
 The AI agent, powered by the neural network, is the cornerstone of the Self-Learning Plugin, enabling dynamic and intelligent behavior within Unreal Engine 5.3 environments.
+
+## **Nodes**
+Nodes are the fundamental units of a neural network, responsible for processing input data and passing signals through the network. In the Self-Learning Plugin, nodes are organized into layers with the following characteristics:
+
+1. **Input Nodes:** Receive and pass raw input values to the first hidden layer; no activation function is applied.
+2. **Hidden Layers:** Process information using a defined activation function.
+3. **Output Layer:** Produce the network’s final output using their own activation function, typically suited to the task.
 
 ## **Weight Initialization**
 Proper initialization of weights is crucial for the effective training of neural networks. In the Self-Learning Plugin, weights are initialized to small random values within a specified range.
@@ -80,7 +88,7 @@ $$h_2 = \text{ActivationFunction}(x_1 \cdot w_{2,1} + x_2 \cdot w_{2,2})$$
 $$y = \text{ActivationFunction}(h_1 \cdot w_{3,1} + h_2 \cdot w_{3,2})$$
    
 ## **Activation Functions**
-Activation functions are crucial in a neural network as they introduce non-linearity, enabling the network to model complex patterns. The Self-Learning Plugin supports several activation functions:
+Activation functions play a vital role in neural networks by introducing non-linearity, allowing the model to learn and represent complex patterns. Each hidden layer and the output layer has its own activation function, and all nodes within a given layer use the same one. This design ensures consistent behavior within each layer while allowing flexibility across different layers. The Self-Learning Plugin supports several activation functions:
 
 1. **ReLU (Rectified Linear Unit):**
    
